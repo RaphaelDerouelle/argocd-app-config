@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp-argo-application
@@ -14,10 +14,10 @@ spec:
     server: https://kubernetes.default.svc
     namespace: myapp
 
-syncPolicy:
-  syncOptions:
-  - CreateNamespace=true  
-  automated:
-    selfHeal: true
-    prune: true
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true  
+    automated:
+      selfHeal: true
+      prune: true
       
